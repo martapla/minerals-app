@@ -29,6 +29,46 @@ h1 {
   color: rgb(163, 157, 243);
 }
 
+h2 {
+  font-size: 50px;
+  line-height: 1.1;
+  text-align: center;
+  padding: 40px;
+  color: rgb(163, 157, 243);
+}
+
+.product-card{
+  width: 30%;
+  margin: 10px ;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.product-info {
+  width: 90%;
+  /* border: 1px solid #77c086; */
+  background-color: #e3eaed;
+  padding: 20px;
+  border-radius: 6px;
+  margin:10px auto;
+  gap:20px;
+  text-decoration: none;
+  color: inherit;
+}
+.product-info:hover {
+  background-color: #e8f5e1;
+}
+.product-info p {
+  margin-bottom: 10px;
+}
+
+
+
 
 
 
