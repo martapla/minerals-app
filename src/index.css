@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
 
 }
 
@@ -15,30 +14,58 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   background-color: rgb(210, 242, 244);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+}
+
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.navbar {
+  padding: 10px;
+}
+
+.navbar button {
+  margin-left: 10px;
+  padding: 4px 8px;
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 60px;
   line-height: 1.1;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
   color: rgb(163, 157, 243);
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 30px;
   line-height: 1.1;
   text-align: center;
-  padding: 40px;
+  padding: 10px;
   color: rgb(163, 157, 243);
 }
 
-.product-card{
-  width: 30%;
+.list-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+
+.product-card, .details-card{
+  width: 40%;
   margin: 10px ;
   border: 2px solid #ffffff;
   border-radius: 12px;
@@ -49,7 +76,7 @@ h2 {
  
 }
 
-.product-info {
+.product-info, .details-info {
   width: 90%;
   /* border: 1px solid #77c086; */
   background-color: #e3eaed;
