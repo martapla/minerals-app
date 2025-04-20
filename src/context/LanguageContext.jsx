@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../firebase/firebaseServer"; // ← ajusta la ruta al teu firebase config
+import { db } from "../firebase/firebaseServer"; 
 
 export const LanguageContext = createContext();
 
@@ -9,7 +9,7 @@ export const LanguageProvider = ({ children }) => {
 
   const docRef = doc(db, "config", "languageConfig");
 
-  // 🔁 Llegeix idioma de Firebase quan es carrega
+  // Llegeix idioma de Firebase quan es carrega
   useEffect(() => {
     const fetchLanguage = async () => {
       const docSnap = await getDoc(docRef);
@@ -24,7 +24,7 @@ export const LanguageProvider = ({ children }) => {
 
   const switchLanguage = async (lang) => {
     setLanguage(lang);
-    await setDoc(docRef, { language: lang }, { merge: true }); // 🔁 Guarda a Firebase
+    await setDoc(docRef, { language: lang }, { merge: true }); // save to Firebase
   };
 
   return (

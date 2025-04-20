@@ -13,9 +13,9 @@ const ProductsList = ({products}) => {
               <div className="product-card" key={product.id}>
                 <Link to={`/products/${product.id}`} 
                     className="product-info">
-                    <p><strong>Name:</strong>{product.name?.[language]}</p>
-                    <p><strong>Description:</strong>{product.description}</p>
-                    <p><strong>Region:</strong>{product.region}</p>
+                    <p><strong>{product.name?.[language]}</strong></p>
+                    <p>{product.description?.[language]}</p>
+                    <p>Region - {product.region}</p>
                 </Link>
               </div>
 

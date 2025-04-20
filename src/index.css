@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
 
 }
@@ -21,17 +21,19 @@ body, html {
 }
 
 body.light {
-  background-color: white;
+  background-color: rgb(247, 246, 229);
   color: black;
 }
 
 body.dark {
-  background-color: #121212;
-  color: white;
+  background-color: #3d3c3c;
+  color: rgb(164, 108, 108);
 }
 
 .navbar {
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar button {
@@ -65,30 +67,27 @@ h2 {
 
 
 .product-card, .details-card{
-  width: 40%;
+  width: 20%;
   margin: 10px ;
-  border: 2px solid #ffffff;
+  border: 2px solid rgb(163, 157, 243);
   border-radius: 12px;
-  background-color: #fdfdfd;
-  padding-bottom: 50px;
+  background-color: #ece5e5;
+  padding-top: 50px;
   display: flex;
   flex-direction: row;
  
 }
 
 .product-info, .details-info {
-  width: 90%;
-  /* border: 1px solid #77c086; */
-  background-color: #e3eaed;
-  padding: 20px;
-  border-radius: 6px;
-  margin:10px auto;
-  gap:20px;
+  width: 100%;
+  padding: 10px;
   text-decoration: none;
-  color: inherit;
+  background-color: #ffffff;
+  border-radius: 12px;
+
 }
 .product-info:hover {
-  background-color: #e8f5e1;
+  background-color: #faf3f3;
 }
 .product-info p {
   margin-bottom: 10px;
