@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,  useContext  } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebaseServer';
+import { LanguageContext } from '../context/LanguageContext'; 
 
 const ProductDetail = () => {
-
+  const { language } = useContext(LanguageContext);
   const params= useParams()
   const {id} = params
   console.log(params)
@@ -46,20 +47,20 @@ const ProductDetail = () => {
 
   return (
     <>
-      <h1 className="title-card">Mineral Info</h1>
+      <h2 className="title-card">Mineral Info</h2>
       
       <div className="list-container">
-        <div className="details-card">
-            <div className="details-info">
-                <p><strong>Name:</strong> {product.name}</p>
-                <p><strong>Description:</strong> {product.description}</p>
-                <p><strong>Region:</strong> {product.region}</p>
-                <p><strong>Price:</strong> {product.price}</p>
-                <button onClick={addToCart} className='add-btn'>
-                  🛒 Add
-                </button>
-            </div>
-        </div>
+         <div className="product-card" key={product.id}>
+                        <div
+                            className="product-info">
+                            <p><strong>{product.name?.[language]}</strong></p>
+                            <p>{product.description?.[language]}</p>
+                            <p>Region - {product.region}</p>
+                            <p>Price : {product.price} euros</p>
+                            <button onClick={addToCart} className='product-btn'>Add</button>
+                        </div>
+          </div>
+        
       </div>
     </>
   )

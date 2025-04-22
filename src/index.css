@@ -1,12 +1,4 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  /* color-scheme: light dark; */
-  color: rgba(255, 255, 255, 0.87);
-
-}
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
 
 *{
   margin: 0;
@@ -14,10 +6,10 @@
   box-sizing: border-box;
 }
 
-body, html {
-  background-color: rgb(210, 242, 244);
-  width: 100vw;
-  height: 100%;
+body {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body.light {
@@ -31,7 +23,7 @@ body.dark {
 }
 
 .navbar {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -40,68 +32,99 @@ body.dark {
   margin-left: 10px;
   padding: 4px 8px;
 }
+.nav-btns button{
+  background-color: #ece5e5;
+  border: 1px solid rgb(163, 157, 243);
+  border-radius: 30px;
+  cursor: pointer;
+  color:rgb(127, 119, 242);
+}
+
+.link-btns a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  color: rgb(127, 119, 242);
+}
+.link-btns a:hover {
+  color: #63aeff; 
+}
 
 h1 {
   font-size: 60px;
   line-height: 1.1;
   text-align: center;
-  padding: 20px;
   color: rgb(163, 157, 243);
 }
 
-h2 {
-  font-size: 30px;
+.title-card {
+  font-size: 46px;
   line-height: 1.1;
   text-align: center;
   padding: 10px;
   color: rgb(163, 157, 243);
 }
 
-.list-container{
+.list-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
+  gap:24px;
+  margin-top: 30px;
 }
 
-
-.product-card, .details-card{
+.product-card {
   width: 20%;
   margin: 10px ;
-  border: 2px solid rgb(163, 157, 243);
+  border: 1px solid rgb(163, 157, 243);
+  box-shadow: 2px 4px 6px rgba(100, 90, 200, 0.3);
   border-radius: 12px;
   background-color: #ece5e5;
-  padding-top: 50px;
+  padding-top: 180px;
   display: flex;
   flex-direction: row;
- 
 }
 
-.product-info, .details-info {
+.product-info {
   width: 100%;
-  padding: 10px;
+  padding: 16px;
   text-decoration: none;
   background-color: #ffffff;
   border-radius: 12px;
-
+  border-top: 1px solid rgb(163, 157, 243);
+  color: rgb(59, 58, 58);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product-info:hover {
-  background-color: #faf3f3;
+  background-color: #f1e0f9;
 }
 .product-info p {
   margin-bottom: 10px;
 }
-
-
-
-
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  
+.product-info p:first-of-type {
+  text-align: center;
+  font-size: 22px;
 }
+
+.product-btn, .delete-btn {
+  width: 30%;
+  margin:6px auto;
+  padding: 10px;
+  background-color: #ece5e5;
+  border: 1px solid rgb(163, 157, 243);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.product-btn:hover, .delete-btn:hover {
+  background-color: rgb(247, 246, 229);
+}
+
+
+
+
+

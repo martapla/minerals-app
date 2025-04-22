@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { LanguageContext } from '../context/LanguageContext'
 
 const Cart = () => {
-
+  const { language } = useContext(LanguageContext);
   const [cart, setCart] = useState([])
 
   useEffect(() => {
@@ -24,14 +25,14 @@ const Cart = () => {
           <p>Is empty.. 🫤</p>
         ) : (
           cart.map((item, index) => (
-            <div key={index} className="details-card">
-              <div className="details-info">
-                <p><strong>Name:</strong> {item.name}</p>
-                <p><strong>Description:</strong> {item.description}</p>
-                <p><strong>Category:</strong> {item.region}</p>
-                <p><strong>Price:</strong> {item.price}</p>
+            <div key={index} className="product-card">
+              <div className="product-info">
+                <p><strong>{item.name?.[language]}</strong></p>
+                <p>{item.description?.[language]}</p>
+                <p>Region - {item.region}</p>
+                <p>Price: {item.price} euros</p>
+                <button onClick={() => handleDelete(index)} className="delete-btn">🗑️ </button>
               </div>
-              <button onClick={() => handleDelete(index)} className="delete-btn">🗑️ Remove</button>
             </div>
           ))
         )}

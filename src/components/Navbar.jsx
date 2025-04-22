@@ -9,17 +9,16 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${theme}`}>
-      <div className="links">
-        <Link to="/">Home</Link> |{" "}
+      <div className="link-btns">
+        <Link to="/">Home</Link> 
         <Link to="/cart">Cart</Link>
       </div>
       <div className="nav-btns">
-        <button onClick={toggleTheme}>
-          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-        </button>{" "}
-        {/* Language: <strong>{language}</strong>{" "} */}
         <button onClick={() => switchLanguage("en")}> 🇬🇧 </button>
         <button onClick={() => switchLanguage("es")}> 🇪🇸 </button>
+        <button onClick={toggleTheme}>
+          {theme === "light" ? "★ Dark" : "☀️ Light"}
+        </button>{" "}
       </div>
     </nav>
   );
