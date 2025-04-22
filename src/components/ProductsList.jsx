@@ -11,6 +11,11 @@ const ProductsList = ({products}) => {
             {products.map((product)=>(
 
               <div className="product-card" key={product.id}>
+                <img
+                  className="product-img"
+                  src={`/assets/minerals/${product.imageName}`}
+                  alt={product.name?.[language]}
+                />
                 <Link to={`/products/${product.id}`} className="product-info">
                     <p><strong>{product.name?.[language]}</strong></p>
                     <p>{product.description?.[language]}</p>
