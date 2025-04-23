@@ -6,7 +6,7 @@ import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart' 
 
 function App() {
-  const {loading, error, filterMinerals} = useFirebaseFetch()
+  const {loading, error, filterMinerals,search, handleSearch} = useFirebaseFetch()
 
   if (loading) return <h3 className='loading'>Loading...</h3>;
   if (error) return <h3>Error: {error}</h3>;
@@ -16,7 +16,10 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<Layout />}>
-                <Route index element={<ProductsList products={filterMinerals}/>} />  
+                <Route index element={<ProductsList 
+                    products={filterMinerals} 
+                    search={search}
+                    handleSearch={handleSearch}/>} />  
                 <Route path='products/:id' element={<ProductDetail />} />
                 <Route path="cart" element={<Cart />} />
             </Route>

@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { LanguageContext } from '../context/LanguageContext'
+import FilterSort from './FilterSort';
 
-const ProductsList = ({products}) => {
+const ProductsList = ({products, search, handleSearch}) => {
   const { language } = useContext(LanguageContext);
   return (
     <>
         <h1>Minerals</h1>
+        
+        <FilterSort search={search} handleSearch={handleSearch}/>
+
         <div className="list-container">
             {products.map((product)=>(
 

@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { getMinerals } from "../lib/mineralRequest";
-import { collection, addDoc } from 'firebase/firestore';
-import { doc, deleteDoc, updateDoc } from "firebase/firestore";
-import { db } from '../firebase/firebaseServer';
+import { LanguageContext } from '../context/LanguageContext'
 
 export const useFirebaseFetch = () => {
+    const { language } = useContext(LanguageContext);
     const[data,setData] = useState([])
     const[loading,setLoading] = useState(true)
     const[error,setError] = useState(null)
     const [filterMinerals, setFilterMinerals] = useState([])
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +30,21 @@ export const useFirebaseFetch = () => {
     
         fetchData();
     }, []);
-    return {data, loading, error, filterMinerals};  
+
+    //Input Search
+    const handleSearch = (searchTerm) => {
+      console.log('input text:',searchTerm)
+      setSearch(searchTerm)
+
+      const inputMineral = data.filter(mineral => {
+        const name = mineral.name?.[language];  
+        return name && name.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+
+      setFilterMinerals(inputMineral)
+    }
+
+    return {data, loading, error, filterMinerals, search, handleSearch};  
 }
 
 export default useFirebaseFetch

@@ -1,8 +1,15 @@
 import React from 'react'
 
-const FilterSort = () => {
+const FilterSort = ({search, handleSearch}) => {
   return (
-    <div>FilterSort</div>
+    <div className='input-search'>
+      <input 
+        type="text"
+        value={search} 
+        onChange= {(e)=>handleSearch(e.target.value)}
+        placeholder='Search mineral...'
+      />
+    </div>
   )
 }
 

@@ -51,15 +51,20 @@ const ProductDetail = () => {
       
       <div className="list-container">
          <div className="product-card" key={product.id}>
-                        <div
-                            className="product-info">
-                            <p><strong>{product.name?.[language]}</strong></p>
-                            <p>{product.description?.[language]}</p>
-                            <p>Region - {product.region}</p>
-                            <p>Price : {product.price} euros</p>
-                            <button onClick={addToCart} className='product-btn'>Add</button>
-                        </div>
-          </div>
+         <img
+                  className="product-img"
+                  src={`/assets/minerals/${product.imageName}`}
+                  alt={product.name?.[language]}
+                />
+            <div
+                className="product-info">
+                <p><strong>{product.name?.[language]}</strong></p>
+                <p>{product.description?.[language]}</p>
+                <p>Region - {product.region}</p>
+                <p>Price : {product.price} euros</p>
+                <button onClick={addToCart} className='product-btn'>Add</button>
+            </div>
+         </div>
         
       </div>
     </>

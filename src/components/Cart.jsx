@@ -26,6 +26,11 @@ const Cart = () => {
         ) : (
           cart.map((item, index) => (
             <div key={index} className="product-card">
+              <img
+                  className="product-img"
+                  src={`/assets/minerals/${item.imageName}`}
+                  alt={item.name?.[language]}
+                />
               <div className="product-info">
                 <p><strong>{item.name?.[language]}</strong></p>
                 <p>{item.description?.[language]}</p>
