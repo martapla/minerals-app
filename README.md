@@ -3,7 +3,7 @@ Minerals App is a practical React project focused on custom hooks, Firebase inte
 
 ## 🌐 Live Demo
 
-
+https://minerals-app.vercel.app/
 
 ## 🪄 Features
 
