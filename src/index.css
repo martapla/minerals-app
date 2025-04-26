@@ -55,14 +55,16 @@ h1 {
   line-height: 1.1;
   text-align: center;
   color: rgb(163, 157, 243);
+  padding-top: 30px;
 }
 
 .title-card {
-  font-size: 46px;
+  font-size: 40px;
   line-height: 1.1;
   text-align: center;
   padding: 10px;
   color: rgb(163, 157, 243);
+  padding-top: 30px;
 }
 
 .list-container {
@@ -161,10 +163,9 @@ h1 {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .product-card {
     width: 70%;
-    /* min-width: unset; */
   }
 
   .input-search input {
