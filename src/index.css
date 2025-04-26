@@ -77,17 +77,17 @@ h1 {
 
 .product-card {
   width: 20%;
-  /* width: calc(100% / 4 - 60px);  */
-  min-width: 250px;
+  min-width: 270px;
   margin: 10px ;
   border: 1px solid rgb(163, 157, 243);
   box-shadow: 2px 4px 6px rgba(100, 90, 200, 0.3);
   border-radius: 12px;
   background-color: #ece5e5;
-  /* padding-top: 180px; */
   display: flex;
   flex-direction: column; 
   overflow: hidden; 
+  justify-content: space-between; 
+  /* height: 100%;  */
 }
 
 .product-img {
@@ -99,6 +99,7 @@ h1 {
 }
 
 .product-info {
+  flex-grow: 1;
   width: 100%;
   padding: 16px;
   text-decoration: none;
@@ -160,5 +161,18 @@ h1 {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .product-card {
+    width: 70%;
+    /* min-width: unset; */
+  }
 
+  .input-search input {
+    width: 60%;
+  }
+
+  .product-img {
+    height: 350px;
+  }
+}
 
