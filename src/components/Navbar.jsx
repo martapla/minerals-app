@@ -3,14 +3,14 @@ import { ThemeContext } from '../context/ThemeContext';
 import { LanguageContext } from '../context/LanguageContext';
 import { useContext } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ handleSearch }) => {
   const { theme, toggleTheme } = useContext(ThemeContext)
   const { language, switchLanguage } = useContext(LanguageContext);
 
   return (
     <nav className={`navbar ${theme}`}>
       <div className="link-btns">
-        <Link to="/">Home</Link> 
+        <Link to="/" onClick={() => handleSearch("")}>Home</Link> 
         <Link to="/cart">Cart</Link>
       </div>
       <div className="nav-btns">

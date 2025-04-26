@@ -31,6 +31,10 @@ export const useFirebaseFetch = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+      setSearch(""); // Empty input
+    }, [data]);
+
     //Input Search
     const handleSearch = (searchTerm) => {
       console.log('input text:',searchTerm)

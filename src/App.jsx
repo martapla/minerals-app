@@ -15,7 +15,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Layout 
+                    handleSearch={handleSearch} 
+                    search={search}
+                    />}>
                 <Route index element={<ProductsList 
                     products={filterMinerals} 
                     search={search}
